@@ -41,7 +41,7 @@ class profileSettingsModulController extends ArchimedaUser{
 		$article 	= new ArticleView;
 		$rest 		= new Rest;
 		$id = $article->getStaticId();
-		$articleName = $article->getPostParam("name",  $id);
+		$articleName = "My data";
 		$articleImage = $article->getPostImage($id);
 		
 		$custom_data = array(
