@@ -20,7 +20,7 @@
 						if($row['value'] != "#no_input"){
                   ?>
 				  
-				    <?php if(strtolower($row['value']) == "other" || strtolower($row['value']) == "type"){?>
+				    <?php if(strtolower($row['value']) == "other" || strtolower($row['value']) == "type below"){?>
 					<div class="input-wrap has-other area"style="display:none;">
 						<div class="text-area-wrap">
 						<textarea name="<?php echo $poll_input_name; ?>"></textarea>
@@ -31,7 +31,7 @@
 					
 					 <?php } ?>
 					 
-				   <div class="input-wrap <?php if(strtolower($row['value']) == "other" || strtolower($row['value']) == "type"){ echo "has-other";}else{echo "default";}?>" >
+				   <div class="input-wrap <?php if(strtolower($row['value']) == "other" || strtolower($row['value']) == "type below"){ echo "has-other";}else{echo "default";}?>" >
 					  <input id="input-<?php echo $row['id_entity']?>" class="" type="radio" name="<?php echo $poll_input_name; ?>" required="" value="<?php echo $row['id_entity']?>">
 					  <label for="input-<?php echo $row['id_entity']?>"><?php echo $row['value']?> </label>
 					  <div class="check">
