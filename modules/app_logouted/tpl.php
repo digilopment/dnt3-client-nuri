@@ -14,6 +14,7 @@
 			<?php departments_all_tpl($data, "1267,1268,1269", ""); ?>
 		</div>
 		
+		<?php /*
 		<div class="swiper-slide" id="departments-tpl_internal">
 			<?php departments_tpl($data, "1267", ""); ?>
 		</div>
@@ -25,6 +26,7 @@
 		<div class="swiper-slide" id="departments-tpl_independent">
 			<?php departments_tpl($data, "1269", ""); ?>
 		</div>
+		*/?>
 		
 		<!-- registration -->
 		<div class="swiper-slide" id="registration-form_main">
