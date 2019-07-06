@@ -44,6 +44,9 @@ if($user->logged()){
 			<div class="toggle">
 				 <a href="#" class="close-form-area toggle-title"><center style="color: #002d52"><?php echo $post['name'];?></center><i class="ion-android-close"></i></a>
 			  </div>
+			<div class="toggle">
+			   <a href="#" class="toggle-title departamen-form-id-all-info-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "info", "translate");?><i class="ion-android-add"></i></a>
+			</div>
 			
 <?php
 				$modul = new primaryHandlerModulController();
@@ -106,6 +109,7 @@ if($user->logged()){
 		$textAbout = false;
 		$textHealth = false;
 		$textMedical = false;
+		$textInfo = false;
 		if($post['service']){
 			$metas = ArticleView::getPostsMeta($post['id_entity'], "article_view_meta");
 			foreach($metas as $meta){
@@ -117,6 +121,9 @@ if($user->logged()){
 				}
 				if($meta['key'] == "medical"){
 					$textMedical =  html_entity_decode(trim(preg_replace('/\s\s+/', ' ', $meta['value'])));
+				}
+				if($meta['key'] == "info"){
+					$textInfo =  html_entity_decode(trim(preg_replace('/\s\s+/', ' ', $meta['value'])));
 				}
 			}
 		}?>
@@ -140,6 +147,13 @@ if($user->logged()){
 		  $("#data-reader").html("");
 		  var text = '<?php echo $textMedical;?>';
 		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("<?php echo MultyLanguage::translate($data, "medical_procedures", "translate");?>", text));
+      });
+	  
+	  $(".departamen-form-id-all-info-<?php echo $post['id_entity'];?>").on('click', function() {
+		  $(".coverpage-slider").fadeOut();
+		  $("#data-reader").html("");
+		  var text = '<?php echo $textInfo;?>';
+		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("<?php echo MultyLanguage::translate($data, "info", "translate");?>", text));
       });
       
       
