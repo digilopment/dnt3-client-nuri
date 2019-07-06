@@ -25,6 +25,34 @@ class ArchimedaUser extends Database{
 		
 	}
 	
+	public function getAlphabet(){
+		
+		$alphabet = array(
+			'A' => 1267,
+			'B' => 1268,
+			'C' => 1269,
+			'D' => 1280,
+			'E' => 1281,
+			'F' => 1282,
+			'G' => 1283,
+			'H' => 1284,
+			'K' => 1285,
+			'L' => 1286,
+			'M' => 1287,
+			'N' => 1288,
+			'O' => 1289,
+			'P' => 1290,
+			'R' => 1291,
+			'S' => 1292,
+			'T' => 1293,
+			'U' => 1294,
+			'V' => 1295,
+			'W' => 1296,
+			'Z' => 1297,
+		);
+		return $alphabet;
+	}
+	
 	public function logged(){
 		$session = new Sessions;
 		if($session->get("archimeda-patient_logged") || (Cookie::Get("archimeda-patient_logged") == 1 && Cookie::Get("archimeda-patient_id") != "")){

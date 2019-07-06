@@ -7,8 +7,8 @@ $user = new ArchimedaUser();
          <div class="landing-wrapper">
             <div class="slide-wrapper">
                <?php
-                  $catArr = array(1267=>"Internal Medicine", 1268=>"Surgery", 1269=>"Independent");
-                  foreach($catArr as $catId => $catName){
+				 $catArr = $user->getAlphabet();
+                  foreach($catArr as $catName => $catId){
                   ?>
                <ul>
                   <span class="title"><?php echo $catName; ?></span>
@@ -19,7 +19,7 @@ $user = new ArchimedaUser();
                      ?>
                   <li>
                      <a <?php if(!$user->logged()){echo 'href="#login-form_main" ';} ?> class="show-departament-forms" id="departamen-form-id-all-<?php echo $post['id_entity']?>" data-search="<?php echo Dnt::name_url($post['name_url'])?>" data-id="<?php echo $post['id_entity']?>" href="#">
-                     <i class="<?php echo $post['id']?>" style="background: <?php echo $post['embed']?>"><?php echo substr($post['name'], 0, 2);?></i>
+                     <i class="<?php echo $post['id']?>" style="background: <?php echo "#04579b".$post['embed']?>"><?php echo ucfirst(substr(Dnt::name_url($post['name']), 0, 2));?></i>
                      <em><?php echo $post['name']?></em>
                      </a>
                   </li>
@@ -35,28 +35,17 @@ $user = new ArchimedaUser();
    
  <?php 
 if($user->logged()){
-   foreach($allPosts as $post){?>
+   foreach($allPosts as $post){
+	if($post['id_entity'] == 18784){
+	?>
    <div class="form-area" id="form-area-all-<?php echo $post['id_entity'];?>">
       <div class="content" style="margin-bottom: 0px;">
          <div class="one-half-responsive">
 			<div class="toggle">
-				 <a href="#" class="close-form-area toggle-title"><center style="color: #1a79b2"><?php echo $post['name'];?></center><i class="ion-android-close"></i></a>
+				 <a href="#" class="close-form-area toggle-title"><center style="color: #002d52"><?php echo $post['name'];?></center><i class="ion-android-close"></i></a>
 			  </div>
-			  <div class="toggle">
-			   <a href="#" class="toggle-title departamen-form-id-all-about-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "about", "translate");?><i class="ion-android-add"></i></a>
-			</div>
-			<div class="toggle">
-			   <a href="#" class="toggle-title departamen-form-id-all-health-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "health_promotion", "translate");?><i class="ion-android-add"></i></a>
-			</div>
-			<div class="toggle">
-			   <a href="#" class="toggle-title departamen-form-id-all-medical-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "medical_procedures", "translate");?><i class="ion-android-add"></i></a>
-			</div>
-         </div>
-         <div class="clear"></div>
-      </div>
-      <div class="content">
-         <div class="one-half-responsive">
-            <?php
+			
+<?php
 				$modul = new primaryHandlerModulController();
 				$pollsArr = $modul->getDepartmentPolls($post);
 				if(count($pollsArr)>0){
@@ -79,10 +68,20 @@ if($user->logged()){
 					</div>
 				<?php
 				}
-			?>
+			?>			
+			<div class="toggle">
+			   <a href="#" class="toggle-title departamen-form-id-all-about-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "about", "translate");?><i class="ion-android-add"></i></a>
+			</div>
+			<div class="toggle">
+			   <a href="#" class="toggle-title departamen-form-id-all-health-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "health_promotion", "translate");?><i class="ion-android-add"></i></a>
+			</div>
+			<div class="toggle">
+			   <a href="#" class="toggle-title departamen-form-id-all-medical-<?php echo $post['id_entity'];?>"> <?php echo MultyLanguage::translate($data, "medical_procedures", "translate");?><i class="ion-android-add"></i></a>
+			</div>
          </div>
          <div class="clear"></div>
       </div>
+
    </div>
    <script>
       $(document).ready(function(){
@@ -126,21 +125,21 @@ if($user->logged()){
 		  $(".coverpage-slider").fadeOut();
 		  $("#data-reader").html("");
 		  var text = '<?php echo $textAbout;?>';
-		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("About", text));
+		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("<?php echo MultyLanguage::translate($data, "about", "translate");?>", text));
       });
       
       $(".departamen-form-id-all-health-<?php echo $post['id_entity'];?>").on('click', function() {
 		  $(".coverpage-slider").fadeOut();
 		  $("#data-reader").html("");
 		  var text = '<?php echo $textHealth;?>';
-		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("Health promotion", text));
+		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("<?php echo MultyLanguage::translate($data, "health_promotion", "translate");?>", text));
       });
       
       $(".departamen-form-id-all-medical-<?php echo $post['id_entity'];?>").on('click', function() {
 		  $(".coverpage-slider").fadeOut();
 		  $("#data-reader").html("");
 		  var text = '<?php echo $textMedical;?>';
-		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("Medical Procedures", text));
+		  $("#data-reader").html(dataReaderTpl<?php echo $post['id_entity'];?>("<?php echo MultyLanguage::translate($data, "medical_procedures", "translate");?>", text));
       });
       
       
@@ -167,6 +166,7 @@ if($user->logged()){
    </script>
    
    <div class="overlay dark-overlay"></div>
+	<?php } ?>
 	<?php } ?>
 </div>
  
@@ -195,7 +195,7 @@ if($user->logged()){
 .all-departaments .slide-wrapper .title{
 	display: block;
 	margin-left: 25px;
-	color: #1a79b2;
+	color: #002d52;
 	font-weight: bold;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -211,14 +211,14 @@ if($user->logged()){
     font-size: 12px;
 }
  .close-form-area.toggle-title center{
-	color: #1a79b2;
+	color: #002d52;
     font-size: 16px;
 	text-transform: uppercase;
     font-weight: bold;
  }
  ul.tabs li.current,
  .tab-content {
-    background: #1a79b2;
+    background: #002d52;
     color: #fff;
 }
 .toggle .toggle-title {

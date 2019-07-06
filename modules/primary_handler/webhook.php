@@ -167,8 +167,7 @@ class primaryHandlerModulController extends ArchimedaUser{
 	}
 	
 	public function run(){
-		
-		$rest 			 = new Rest();
+		$rest  = new Rest();
 		if(
 			$rest->webhook(1) == $this->route_app && 
 			$rest->webhook(2) == $this->route_departments && 

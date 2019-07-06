@@ -7,11 +7,11 @@ function defaultModuleMetaDataConfiguration($postId, $service){
 		'`post_id`' 		=> $postId, 
 		'`service`' 		=> $service, 
 		'`vendor_id`' 		=> Vendor::getId(), 
-		'`key`' 			=> "about", 
-		'`value`' 			=> $defaultContent, 
-		'`content_type`' 	=> "content",
+		'`key`' 			=> "poll_id", 
+		'`value`' 			=> "", 
+		'`content_type`' 	=> "text",
 		'`cat_id`' 			=> "3",
-		'`description`' 	=> "About Department", 
+		'`description`' 	=> "BU product", 
 		'`order`' 			=> 1, 
 		'`show`' 			=> 1, 
 	);
@@ -24,7 +24,7 @@ function defaultModuleMetaDataConfiguration($postId, $service){
 		'`value`' 			=> $defaultContent, 
 		'`content_type`' 	=> "content",
 		'`cat_id`' 			=> "3",
-		'`description`' 	=> "Health promotion", 
+		'`description`' 	=> "GF product", 
 		'`order`' 			=> 1, 
 		'`show`' 			=> 1, 
 	);
@@ -37,7 +37,7 @@ function defaultModuleMetaDataConfiguration($postId, $service){
 		'`value`' 			=> $defaultContent, 
 		'`content_type`' 	=> "content",
 		'`cat_id`' 			=> "3",
-		'`description`' 	=> "Medical Procedures", 
+		'`description`' 	=> "DD product", 
 		'`order`' 			=> 1, 
 		'`show`' 			=> 1, 
 	);
@@ -46,14 +46,16 @@ function defaultModuleMetaDataConfiguration($postId, $service){
 		'`post_id`' 		=> $postId, 
 		'`service`' 		=> $service, 
 		'`vendor_id`' 		=> Vendor::getId(), 
-		'`key`' 			=> "poll_id", 
-		'`value`' 			=> "", 
-		'`content_type`' 	=> "text",
+		'`key`' 			=> "about", 
+		'`value`' 			=> $defaultContent, 
+		'`content_type`' 	=> "content",
 		'`cat_id`' 			=> "3",
-		'`description`' 	=> "Formulars IDs (separate each forms with a comma)", 
+		'`description`' 	=> "LV product", 
 		'`order`' 			=> 1, 
 		'`show`' 			=> 1, 
 	);
+	
+	
 	
 	return $insertedData;
 	

@@ -103,7 +103,7 @@ input, select{
 	margin: 25px 0px 10px 20px;
 }
 .mini-logo span{
-	color: #1a79b2;
+	color: #002d52;
 	text-align: left;	
 }
 		
@@ -159,7 +159,7 @@ input, select{
 .swiper-slide.info{
 }
 .color-blue-light {
-    color: #1a79b2!important;
+    color: #002d52!important;
 }
 
 .text-buble {
@@ -255,16 +255,21 @@ button{
     background-color: rgb(255, 255, 255);
 }
 .header-dark {
-    background-color: rgba(26, 121, 178, 1);
+    background-color: rgba(0, 45, 82, 1);
 }
 .theme.blue .dark-overlay {
-    background-color: rgba(26, 121, 175, 1);
+    background-color: rgba(0, 45, 82, 1);
 }
 .theme.blue .header-dark {
-    background-color: rgba(26, 121, 175, 1);
+    background-color: rgba(0, 45, 82, 1);
 }
 .sidebar-header-image .sidebar-socials {
-    background: rgba(26, 121, 175, 1);
+    background: rgba(0, 45, 82, 1);
+}
+
+.button-blue {
+    background-color: #002d52;
+    border: solid 2px #002d52;
 }
 
 
@@ -415,7 +420,7 @@ button{
 
 /*** FORM POLL STEP **/
 #page-content .poll-steps {
-	background-color: #1a79b2;
+	background-color: #002d52;
     color: #fff;
     position: fixed;
     bottom: 40px;
@@ -462,7 +467,7 @@ button{
     height: 25px;
     line-height: 25px;
     font-weight: bold;
-    color: #1a79b2;
+    color: #002d52;
     margin-top: 10px;
     margin-right: -16px;
 }
@@ -475,7 +480,7 @@ button{
     border-radius: 0px;
     border: 0px;
     border-bottom: 0px;
-    background-color: #1a79b2 !important;
+    background-color: #002d52 !important;
 }
 .page-polls {
  margin-top: 75px;
@@ -802,13 +807,13 @@ button{
 }
 
 .polls_cont input[type=radio]:checked ~ .check::before {
-    background: #1a79b2;
+    background: #002d52;
 }
 .polls_cont input[type=radio]:checked ~ .check {
-    border: 2px solid #1a79b2;
+    border: 2px solid #002d52;
 }
 .polls_cont .input-wrap .check {
-    border: 2px solid #1a79b2;
+    border: 2px solid #002d52;
 }
 .polls_cont .input-wrap .check {
     height: 30px;
@@ -873,7 +878,7 @@ button{
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: #1a79b2;
+    background-color: #002d52;
     border-radius: 24px;
     text-align: right;
     position: relative;
@@ -933,7 +938,7 @@ button{
 		height: initial;
 		line-height: initial;
 		text-align: center;
-		color: #1a79b2;
+		color: #002d52;
 		font-size: 27px;
 		display: inline-block;
 		margin: 5px;
@@ -944,7 +949,7 @@ button{
 	.bottom-navigation a > span {
 		display: inline;
 		display: block;
-		color: #1a79b2;
+		color: #002d52;
 		padding: 0px;
 		margin: 0px;
 		margin-top: -15px;
@@ -959,7 +964,7 @@ button{
 		font-size: 20px;
 		color: #fff;
 		font-size: 32px;
-		color: #1a79b2;
+		color: #002d52;
 	}
 	.bottom-navigation a{
 		display: inline-block;
