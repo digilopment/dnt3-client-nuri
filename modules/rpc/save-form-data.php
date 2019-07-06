@@ -117,8 +117,8 @@ class SaveFormData extends ArchimedaUser{
 			$userData['name'] = "Please scan your QR code bellow to continue";
 			$userData['img'] = Image::getFileImage($this->get()->img, true, Image::THUMB);
 			$userData['img_qr'] = $this->qrImage;
-			$userData['message_1'] = "Your data are ready to view, you can use QR code bellow or you can go to Archimeda app and go to Examinations.";
-			$userData['message_2'] = "Thank you for using <b>Archimeda</b> App";
+			$userData['message_1'] = "Your data are ready to view, you can use QR code bellow or you can go to Nuri app and go to history of diseases.";
+			$userData['message_2'] = "Thank you for using <b>Nuri</b> App";
 			
 			$messageTitle 	= $userData['app_name'];
 			$senderEmail 	= "info@archimeda.sk";

@@ -36,7 +36,7 @@ $user = new ArchimedaUser();
  <?php 
 if($user->logged()){
    foreach($allPosts as $post){
-	if($post['id_entity'] == 18784){
+	if($post['id_entity'] == 18800){
 	?>
    <div class="form-area" id="form-area-all-<?php echo $post['id_entity'];?>">
       <div class="content" style="margin-bottom: 0px;">
