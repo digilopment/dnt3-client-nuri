@@ -113,15 +113,15 @@ class SaveFormData extends ArchimedaUser{
 			);
 			
 			
-			$userData['app_name'] = $this->get()->name. " here's your examination data";
+			$userData['app_name'] = $this->get()->name. " here's your diseases data";
 			$userData['name'] = "Please scan your QR code bellow to continue";
 			$userData['img'] = Image::getFileImage($this->get()->img, true, Image::THUMB);
 			$userData['img_qr'] = $this->qrImage;
-			$userData['message_1'] = "Your data are ready to view, you can use QR code bellow or you can go to Nuri app and go to history of diseases.";
+			$userData['message_1'] = "Your data are ready to view.";
 			$userData['message_2'] = "Thank you for using <b>Nuri</b> App";
 			
 			$messageTitle 	= $userData['app_name'];
-			$senderEmail 	= "info@archimeda.sk";
+			$senderEmail 	= "info@nuri.de";
 			$msg 			= $this->loadHtmlTemplate($userData, "save-email-tpl");
 			$dntMailer->set_recipient(array($this->get()->email));
 			$dntMailer->set_msg($msg);
